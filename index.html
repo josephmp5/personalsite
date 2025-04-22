@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yusuf Özmavi - Full Stack Mobile Developer specializing in iOS, Flutter, and React Native applications with expertise in payment systems and cloud services.">
+    <meta name="keywords" content="mobile developer, iOS developer, Flutter developer, React Native, app development, Swift, SwiftUI, RevenueCat, payment systems">
+    <meta name="author" content="Yusuf Özmavi">
+    <meta property="og:title" content="Yusuf Özmavi | Full Stack Mobile Developer">
+    <meta property="og:description" content="Experienced mobile developer creating beautiful, functional apps with Swift, Flutter, and React Native.">
+    <meta property="og:type" content="website">
+    <title>Yusuf Özmavi | Full Stack Mobile Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4a6cf7;
+            --secondary-color: #6c757d;
+            --dark-color: #212529;
+            --light-color: #f8f9fa;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f5f8ff;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu {
+            display: none;
+            cursor: pointer;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+
+        .hero h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--secondary-color);
+            max-width: 600px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #3a57d0;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .social-icons {
+            display: flex;
+            margin-top: 30px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: white;
+            color: var(--primary-color);
+            margin-right: 15px;
+            transition: all 0.3s;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: right;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .testimonial-container {
+            margin-top: 50px;
+        }
+        
+        .testimonial-slider {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .testimonial-item {
+            display: none;
+            animation: fadeEffect 1s;
+        }
+        
+        .testimonial-item.active {
+            display: block;
+        }
+        
+        @keyframes fadeEffect {
+            from {opacity: 0.4}
+            to {opacity: 1}
+        }
+        
+        .testimonial-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .testimonial-content p {
+            font-style: italic;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .client-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--dark-color);
+        }
+        
+        .client-info p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            color: var(--primary-color);
+            font-style: normal;
+        }
+        
+        .testimonial-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+        
+        .testimonial-dots {
+            display: flex;
+            margin: 0 15px;
+        }
+        
+        .dot {
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+        
+        .dot.active {
+            background-color: var(--primary-color);
+        }
+        
+        .prev-btn, .next-btn {
+            background-color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .prev-btn:hover, .next-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .process-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .process-item {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .process-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .process-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #f1f5ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-color);
+            font-size: 2rem;
+            transition: all 0.3s;
+        }
+        
+        .process-item:hover .process-icon {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .process-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .process-item p {
+            color: var(--secondary-color);
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 3px;
+            background-color: var(--primary-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            color: var(--secondary-color);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .about-text {
+            flex: 1;
+            padding-right: 50px;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .skill-item {
+            background-color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .portfolio-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .portfolio-img {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .portfolio-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .portfolio-item:hover .portfolio-img img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-content {
+            padding: 25px;
+        }
+
+        .portfolio-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-content p {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .portfolio-links {
+            display: flex;
+        }
+
+        .portfolio-links a {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #f1f5ff;
+            color: var(--primary-color);
+            border-radius: 5px;
+            margin-right: 10px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .portfolio-links a:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .contact-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+        }
+
+        .contact-info p {
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-item i {
+            width: 50px;
+            height: 50px;
+            background-color: #f1f5ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-right: 15px;
+        }
+
+        .contact-item .content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .contact-item .content p, .contact-item .content a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item .content a:hover {
+            color: var(--primary-color);
+        }
+
+        .contact-form {
+            flex: 1;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .about-content, .contact-content {
+                flex-direction: column;
+            }
+
+            .about-text {
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+
+            .contact-info {
+                margin-bottom: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: left 0.3s;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-image {
+                margin-bottom: 40px;
+            }
+
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            .portfolio-items {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Yusuf Özmavi</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Hi, I'm <span>Yusuf Özmavi</span></h1>
+                    <p>A passionate Full Stack Mobile Developer with expertise in creating beautiful, functional, and user-centered mobile applications.</p>
+                    <a href="#portfolio" class="btn">View My Work</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                    <div class="social-icons">
+                        <a href="https://github.com/josephmp5" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://x.com/tony6__" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/yusuf-özmavi" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://cdn.pixabay.com/photo/2018/11/29/21/51/social-media-3846597_1280.png" alt="Developer Illustration">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>About Me</h2>
+                <p>Learn more about my background, skills, and experience as a developer.</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right" data-aos-delay="100">
+                    <h3>Who am I?</h3>
+                    <p>I'm Yusuf Özmavi, a Full Stack Mobile Developer with experience working at a development agency and as an indie maker. I specialize in creating beautiful, functional, and user-centered mobile applications that solve real-world problems.</p>
+                    <p>With a passion for clean code and intuitive design, I've developed multiple successful apps that are available on the App Store. I've implemented payment systems using RevenueCat and have experience with webhooks and Google Cloud services. I enjoy the entire development process from conceptualization to deployment and maintenance.</p>
+                    <p>My technical expertise includes both native (Swift, SwiftUI) and cross-platform (Flutter, React Native) development, allowing me to choose the right technology for each project's unique requirements. I pride myself on delivering apps that not only look great but also perform exceptionally well.</p>
+                    <p>When I'm not coding, I'm constantly learning new technologies and exploring ways to improve user experiences in mobile applications.</p>
+                    <div class="skills">
+                        <div class="skill-item">Swift</div>
+                        <div class="skill-item">SwiftUI</div>
+                        <div class="skill-item">UIKit</div>
+                        <div class="skill-item">Flutter</div>
+                        <div class="skill-item">React Native</div>
+                        <div class="skill-item">JavaScript</div>
+                        <div class="skill-item">TypeScript</div>
+                        <div class="skill-item">Firebase</div>
+                        <div class="skill-item">Google Cloud</div>
+                        <div class="skill-item">Webhooks</div>
+                        <div class="skill-item">RevenueCat</div>
+                        <div class="skill-item">Payment Systems</div>
+                        <div class="skill-item">REST API</div>
+                        <div class="skill-item">Node.js</div>
+                        <div class="skill-item">UI/UX Design</div>
+                        <div class="skill-item">App Store Optimization</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" style="background-color: #f1f5ff;">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>My Portfolio</h2>
+                <p>Check out some of my recent mobile application projects.</p>
+            </div>
+            <div class="portfolio-items">
+                <!-- Manifest App -->
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="portfolio-img">
+                        <img src="manifesta.png" alt="Manifest App">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Manifest: Visualization</h3>
+                        <p>A visualization app that helps users manifest their goals through creative visualization techniques and daily affirmations.</p>
+                        <div class="portfolio-links">
+                            <a href="https://apps.apple.com/tr/app/manifest-visualization/id6740709283?l=en" target="_blank">View App <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CuisineAI App -->
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="portfolio-img">
+                        <img src="cuisineai.png" alt="CuisineAI App">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>CuisineAI: Your Personal Chef</h3>
+                        <p>An AI-powered cooking assistant that provides personalized recipes, meal planning, and cooking instructions based on user preferences.</p>
+                        <div class="portfolio-links">
+                            <a href="https://apps.apple.com/tr/app/cuisineai-your-personal-chef/id6503341584?l=en" target="_blank">View App <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Salah App -->
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="portfolio-img">
+                        <img src="salah.png" alt="Salah App">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Salah Akhi</h3>
+                        <p>A prayer time and Quran reading app for Muslims, featuring accurate prayer times, Qibla direction, and a comprehensive Quran reader with multiple translations.</p>
+                        <div class="portfolio-links">
+                            <a href="https://apps.apple.com/tr/app/salah-akhi/id6742937290?l=en" target="_blank">View App <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Toon Creator App -->
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="portfolio-img">
+                        <img src="toon.jpg" alt="Toon Creator App">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Toon Creator</h3>
+                        <p>An app that transforms photos into cartoon-style artwork using advanced AI algorithms and provides various artistic filters.</p>
+                        <div class="portfolio-links">
+                            <a href="#" target="_blank">Coming Soon <i class="fas fa-hourglass-half"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Contact Me</h2>
+                <p>Get in touch for collaboration, freelance work, or just to say hello!</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right" data-aos-delay="100">
+                    <h3>Let's Talk</h3>
+                    <p>Feel free to reach out to me through any of the following channels. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="content">
+                            <h4>Email</h4>
+                            <a href="mailto:ozmaviyusuf@gmail.com">ozmaviyusuf@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fab fa-twitter"></i>
+                        <div class="content">
+                            <h4>Twitter</h4>
+                            <a href="https://x.com/tony6__" target="_blank">@tony6__</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <div class="content">
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/josephmp5" target="_blank">josephmp5</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form" data-aos="fade-left" data-aos-delay="200">
+                    <h3>Send Me a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Yusuf Özmavi. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Client Testimonials</h2>
+                <p>What my clients say about working with me</p>
+            </div>
+            <div class="testimonial-container" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-slider">
+                    <div class="testimonial-item active">
+                        <div class="testimonial-content">
+                            <p>"Yusuf created an exceptional mobile app for our business. His technical expertise and attention to detail resulted in a product that exceeded our expectations. He was responsive, professional, and delivered on time."</p>
+                            <div class="client-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>CEO, TechStart Inc.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <div class="testimonial-content">
+                            <p>"Working with Yusuf was a pleasure. He understood our requirements perfectly and implemented complex payment systems with ease. His knowledge of RevenueCat and in-app purchases saved us countless hours of development time."</p>
+                            <div class="client-info">
+                                <h4>Michael Chen</h4>
+                                <p>Product Manager, AppFlow</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <div class="testimonial-content">
+                            <p>"Yusuf's expertise in both iOS and Flutter development was invaluable for our cross-platform project. He delivered a consistent user experience across both platforms while maintaining excellent performance."</p>
+                            <div class="client-info">
+                                <h4>Emma Rodriguez</h4>
+                                <p>CTO, MobileFirst Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-controls">
+                    <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <div class="testimonial-dots">
+                        <span class="dot active" data-index="0"></span>
+                        <span class="dot" data-index="1"></span>
+                        <span class="dot" data-index="2"></span>
+                    </div>
+                    <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>My Development Process</h2>
+                <p>How I approach mobile app development projects</p>
+            </div>
+            <div class="process-container">
+                <div class="process-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="process-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>1. Discovery</h3>
+                    <p>I begin by understanding your business goals, target audience, and project requirements. This phase involves market research and defining the app's core functionality.</p>
+                </div>
+                <div class="process-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="process-icon">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h3>2. Design</h3>
+                    <p>Creating wireframes and prototypes to visualize the user interface and experience. We'll iterate on designs until they perfectly align with your vision.</p>
+                </div>
+                <div class="process-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="process-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>3. Development</h3>
+                    <p>Building the application with clean, maintainable code using the most appropriate technology stack for your project needs, whether it's Swift, Flutter, or React Native.</p>
+                </div>
+                <div class="process-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="process-icon">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <h3>4. Testing</h3>
+                    <p>Rigorous testing across multiple devices and scenarios to ensure your app is bug-free, performs well, and provides an excellent user experience.</p>
+                </div>
+                <div class="process-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="process-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>5. Deployment</h3>
+                    <p>Handling the app store submission process and ensuring your app meets all guidelines for a successful launch.</p>
+                </div>
+                <div class="process-item" data-aos="fade-up" data-aos-delay="600">
+                    <div class="process-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>6. Maintenance</h3>
+                    <p>Providing ongoing support, updates, and improvements to keep your app running smoothly and adapting to user feedback.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+        
+        // Mobile Menu Toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // In a real implementation, you would send the form data to a server
+            alert('Thank you for your message! I will get back to you soon.');
+            contactForm.reset();
+        });
+
+        // Scroll to top button
+        window.addEventListener('scroll', function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.querySelector('.scroll-to-top').style.display = 'block';
+            } else {
+                document.querySelector('.scroll-to-top').style.display = 'none';
+            }
+        });
+        
+        // Testimonial Slider
+        const testimonialItems = document.querySelectorAll('.testimonial-item');
+        const dots = document.querySelectorAll('.dot');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        let currentIndex = 0;
+        
+        function showTestimonial(index) {
+            testimonialItems.forEach(item => item.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            testimonialItems[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentIndex = index;
+        }
+        
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                const index = parseInt(this.getAttribute('data-index'));
+                showTestimonial(index);
+            });
+        });
+        
+        prevBtn.addEventListener('click', function() {
+            currentIndex = (currentIndex - 1 + testimonialItems.length) % testimonialItems.length;
+            showTestimonial(currentIndex);
+        });
+        
+        nextBtn.addEventListener('click', function() {
+            currentIndex = (currentIndex + 1) % testimonialItems.length;
+            showTestimonial(currentIndex);
+        });
+        
+        // Auto-rotate testimonials
+        setInterval(function() {
+            currentIndex = (currentIndex + 1) % testimonialItems.length;
+            showTestimonial(currentIndex);
+        }, 5000);
+    </script>
+</body>
+</html>
