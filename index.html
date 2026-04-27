@@ -468,6 +468,31 @@
             transform: scale(1.1);
         }
 
+        .portfolio-img.placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            transition: transform 0.5s;
+        }
+
+        .portfolio-item:hover .portfolio-img.placeholder {
+            transform: scale(1.05);
+        }
+
+        .portfolio-img.dots-bg {
+            background: linear-gradient(135deg, #ff9966 0%, #ff5e62 100%);
+        }
+
+        .portfolio-img.coineye-bg {
+            background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+        }
+
+        .portfolio-img.vydeob-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
         .portfolio-content {
             padding: 25px;
         }
@@ -819,6 +844,48 @@
                         <p>An app that transforms photos into cartoon-style artwork using advanced AI algorithms and provides various artistic filters.</p>
                         <div class="portfolio-links">
                             <a href="https://apps.apple.com/en/app/toon-creator-cinematic-cam/id6744416883?l=en" target="_blank">View App <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dots: Memories Stamped App -->
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="portfolio-img placeholder dots-bg">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Dots: Memories Stamped</h3>
+                        <p>A location-based memory journal that lets you stamp meaningful moments onto a personal map. Capture photos, notes, and feelings tied to the places that matter most to you.</p>
+                        <div class="portfolio-links">
+                            <a href="https://apps.apple.com/tr/app/dots-memories-stamped/id6761391244?l=tr" target="_blank">View App <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coin Identifier CoinEye App -->
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="600">
+                    <div class="portfolio-img placeholder coineye-bg">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Coin Identifier: CoinEye</h3>
+                        <p>An AI-powered coin scanner that instantly identifies coins from around the world. Just snap a photo to discover origin, year, rarity, and estimated value of any coin in your collection.</p>
+                        <div class="portfolio-links">
+                            <a href="https://apps.apple.com/tr/app/coin-identifier-coineye/id6761312456?l=tr" target="_blank">View App <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Video Generator Vydeob App -->
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="700">
+                    <div class="portfolio-img placeholder vydeob-bg">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Vydeob: AI Video Generator</h3>
+                        <p>Turn text prompts and images into stunning AI-generated videos. Vydeob brings your creative ideas to life with cinematic animations, effects, and shareable short-form clips in seconds.</p>
+                        <div class="portfolio-links">
+                            <a href="https://apps.apple.com/tr/app/ai-video-generator-vydeob/id6759529182?l=tr" target="_blank">View App <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                 </div>
