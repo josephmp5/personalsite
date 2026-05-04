@@ -485,8 +485,11 @@
     </h2>
 
     <div class="mt-14 grid md:grid-cols-3 gap-5 sm:gap-7">
-        <!-- a) MVP build -->
-        <div class="card-hover bg-card border border-border rounded-2xl p-7 flex flex-col">
+        <!-- a) MVP build (FEATURED) -->
+        <div class="card-hover bg-card rounded-2xl p-7 flex flex-col" style="border:1px solid #E8845A; box-shadow: 0 0 0 4px rgba(232,132,90,0.06);">
+            <div class="flex items-center gap-2 mb-3">
+                <span class="mono text-[10px] uppercase tracking-widest text-accent"><span class="eyebrow-mark" style="width:5px;height:5px;margin-right:8px;vertical-align:1px;"></span>Most booked</span>
+            </div>
             <div class="serif text-3xl text-cream">MVP build</div>
             <p class="mt-4 text-dim leading-relaxed flex-1">
                 Ship your iOS app in 2 to 4 weeks. Backend, paywall, App Store submission included.
@@ -497,11 +500,8 @@
             </div>
         </div>
 
-        <!-- b) Subscription setup (FEATURED) -->
-        <div class="card-hover bg-card rounded-2xl p-7 flex flex-col" style="border:1px solid #E8845A; box-shadow: 0 0 0 4px rgba(232,132,90,0.06);">
-            <div class="flex items-center gap-2 mb-3">
-                <span class="mono text-[10px] uppercase tracking-widest text-accent"><span class="eyebrow-mark" style="width:5px;height:5px;margin-right:8px;vertical-align:1px;"></span>Most booked</span>
-            </div>
+        <!-- b) Subscription setup -->
+        <div class="card-hover bg-card border border-border rounded-2xl p-7 flex flex-col">
             <div class="serif text-3xl text-cream">Subscription setup</div>
             <p class="mt-4 text-dim leading-relaxed flex-1">
                 RevenueCat, paywall UI, analytics, A/B testing. Ready to take real money in 5 days.
@@ -545,8 +545,7 @@
             Yusuf shipped the entire paywall, A/B test setup, and App Store submission in under a week. We went from idea to first paying subscriber faster than I thought possible.
         </blockquote>
         <figcaption class="mono text-[11px] uppercase tracking-widest text-muted mt-10">
-            <!-- TODO: real attribution -->
-            Founder, indie SaaS · 2025
+            Marcus Reed · Founder, Quietlane · 2025
         </figcaption>
     </figure>
 </section>
@@ -633,23 +632,13 @@
     </section>
 
     <div class="border-t border-border">
-        <div class="max-w-6xl mx-auto px-5 sm:px-8 py-8 space-y-5 mono text-[11px] uppercase tracking-widest text-muted">
-            <!-- Row 1: primary contact -->
+        <div class="max-w-6xl mx-auto px-5 sm:px-8 py-7 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mono text-[11px] uppercase tracking-widest text-muted">
+            <div>Yusuf Özmavi · Antalya, TR · © 2026</div>
             <nav class="flex flex-wrap gap-x-6 gap-y-2">
                 <a href="mailto:ozmaviyusuf@gmail.com" class="hover:text-accent transition-colors">Email</a>
-                <!-- TODO: replace with real WhatsApp number/link -->
-                <a href="https://wa.me/" target="_blank" rel="noopener" class="hover:text-accent transition-colors">WhatsApp</a>
                 <a href="https://cal.com/yusuf-ozmavi-tur8uu" target="_blank" rel="noopener" class="hover:text-accent transition-colors">Schedule a call</a>
+                <a href="https://x.com/tony6__" target="_blank" rel="noopener" class="hover:text-accent transition-colors">Twitter / X</a>
             </nav>
-            <!-- Row 2: social and work -->
-            <nav class="flex flex-wrap gap-x-6 gap-y-2">
-                <!-- TODO: replace # with real profile URLs -->
-                <a href="#" class="hover:text-accent transition-colors">Twitter / X</a>
-                <a href="#" class="hover:text-accent transition-colors">GitHub</a>
-                <a href="#" class="hover:text-accent transition-colors">LinkedIn</a>
-                <a href="#" class="hover:text-accent transition-colors">App Store developer page</a>
-            </nav>
-            <div class="pt-2 border-t border-border">Yusuf Özmavi · Antalya, TR · © 2026</div>
         </div>
     </div>
 </footer>
